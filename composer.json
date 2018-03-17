@@ -1,0 +1,23 @@
+{
+  "name": "nucreativa/laravel-frontaccounting-graphql",
+  "description": "Laravel Frontaccounting GraphQL",
+  "type": "library",
+  "license": "MIT",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Ary Wibowo",
+      "email": "nucreativa@gmail.com"
+    }
+  ],
+  "require": {
+    "folklore/graphql": "^1.0",
+    "nucreativa/laravel-frontaccounting-models": "<=1.0"
+  },
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "LaravelWordpressGraphQL\\": "src/"
+    }
+  }
+}
