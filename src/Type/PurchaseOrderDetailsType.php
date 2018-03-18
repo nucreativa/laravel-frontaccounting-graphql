@@ -1,6 +1,6 @@
 <?php
 
-namespace App\GraphQL\Type;
+namespace Nucreativa\LaravelFrontaccountingGraphQL\Type;
 
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Type as BaseType;

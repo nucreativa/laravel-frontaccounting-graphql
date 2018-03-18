@@ -1,6 +1,6 @@
 <?php
 
-namespace App\GraphQL\Query;
+namespace Nucreativa\LaravelFrontaccountingGraphQL\Query;
 
 use Folklore\GraphQL\Support\Query;
 use GraphQL\Type\Definition\ResolveInfo;
@@ -20,11 +20,16 @@ class PurchaseOrderQuery extends Query {
 
 	public function args() {
 		return [
-
+			'order_no' => [ 'name' => 'order_no', 'type' => Type::string() ],
 		];
 	}
 
 	public function resolve( $root, $args, $context, ResolveInfo $info ) {
-		return PurchaseOrder::on( 'fa' )->get();
+		$purchaseOrder = PurchaseOrder::on( 'fa' );
+		if ( isset( $args['order_no'] ) ) {
+			$purchaseOrder = $purchaseOrder->where( 'order_no', $args['order_no'] );
+		}
+
+		return $purchaseOrder->get();
 	}
 }
