@@ -124,8 +124,9 @@ return [
 	'schemas'               => [
 		'default' => [
 			'query'    => [
-				'salesOrder'    => 'App\GraphQL\Query\SalesOrderQuery',
-				'purchaseOrder' => 'App\GraphQL\Query\PurchaseOrderQuery',
+				'salesOrder'    => 'Nucreativa\LaravelFrontaccountingGraphQL\Query\SalesOrderQuery',
+				'purchaseOrder' => 'Nucreativa\LaravelFrontaccountingGraphQL\Query\PurchaseOrderQuery',
+				'product'       => 'Nucreativa\LaravelFrontaccountingGraphQL\Query\ProductQuery',
 			],
 			'mutation' => [
 
@@ -169,10 +170,12 @@ return [
 	 * ]
 	 */
 	'types'                 => [
-		'SalesOrderType'           => 'App\GraphQL\Type\SalesOrderType',
-		'SalesOrderDetailsType'    => 'App\GraphQL\Type\SalesOrderDetailsType',
-		'PurchaseOrderType'        => 'App\GraphQL\Type\PurchaseOrderType',
-		'PurchaseOrderDetailsType' => 'App\GraphQL\Type\PurchaseOrderDetailsType',
+		'SalesOrderType'           => 'Nucreativa\LaravelFrontaccountingGraphQL\Type\SalesOrderType',
+		'SalesOrderDetailsType'    => 'Nucreativa\LaravelFrontaccountingGraphQL\Type\SalesOrderDetailsType',
+		'PurchaseOrderType'        => 'Nucreativa\LaravelFrontaccountingGraphQL\Type\PurchaseOrderType',
+		'PurchaseOrderDetailsType' => 'Nucreativa\LaravelFrontaccountingGraphQL\Type\PurchaseOrderDetailsType',
+		'ProductType'              => 'Nucreativa\LaravelFrontaccountingGraphQL\Type\ProductType',
+		'ProductCategoryType'      => 'Nucreativa\LaravelFrontaccountingGraphQL\Type\ProductCategoryType',
 	],
 
 	/*
