@@ -66,16 +66,33 @@ class ProductType extends BaseType {
 				'type' => Type::string(),
 			],
 			'prices'             => [
-				'type' => Type::listOf( GraphQL::type( 'ProductPriceType' ) ),
+				'type'    => Type::listOf( GraphQL::type( 'ProductPriceType' ) ),
+				'args'    => [
+					'sales_type_id' => [
+						'type' => Type::string(),
+						'name' => 'sales_type_id'
+					],
+					'type'          => [
+						'type' => Type::string(),
+						'name' => 'type'
+					]
+				],
+				'resolve' => function ( $root, $args ) {
+					if ( @$args['type'] ) {
+						return $root->prices()
+						            ->join( 'sales_types', 'sales_types.id', '=', 'sales_type_id' )
+						            ->where( 'sales_types.sales_type', '=', $args['type'] )->get();
+					} else if ( @$args['sales_type_id'] ) {
+						return $root->prices()->where( 'sales_type_id', $args['sales_type_id'] )->get();
+					} else {
+						return $root->prices;
+					}
+				}
 			]
 		];
 	}
 
 	protected function resolveSkuField( $root, $args ) {
 		return $root->stock_id;
-	}
-
-	protected function resolvePricesField( $root, $args ) {
-		return $root->prices;
 	}
 }
