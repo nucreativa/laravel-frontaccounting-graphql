@@ -14,30 +14,21 @@ class SalesOrderType extends BaseType {
 
 	public function fields() {
 		return [
-			'order_no'     => [
-				'type'        => Type::nonNull( Type::string() ),
-				'description' => 'The order no of the sales order'
+			'id'   => [
+				'type' => Type::string(),
 			],
-			'total_amount' => [
-				'type'        => Type::float(),
-				'description' => 'The total of the sales order'
+			'sales_type'   => [
+				'type' => Type::string(),
 			],
-			'order_date'   => [
-				'type'        => Type::string(),
-				'description' => 'The date of the sales order'
+			'tax_included' => [
+				'type' => Type::int(),
 			],
-			'details'      => [
-				'type'        => Type::listOf( GraphQL::type( 'SalesOrderDetailsType' ) ),
-				'description' => 'The details of the sales order'
+			'factor'       => [
+				'type' => Type::float(),
+			],
+			'inactive'     => [
+				'type' => Type::boolean(),
 			],
 		];
-	}
-
-	protected function resolveTotalAmountField( $root, $args ) {
-		return $root->total;
-	}
-
-	protected function resolveOrderDateField( $root, $args ) {
-		return $root->ord_date;
 	}
 }

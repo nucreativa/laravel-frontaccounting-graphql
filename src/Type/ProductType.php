@@ -65,10 +65,17 @@ class ProductType extends BaseType {
 			'wip_account'        => [
 				'type' => Type::string(),
 			],
+			'prices'             => [
+				'type' => Type::listOf( GraphQL::type( 'ProductPriceType' ) ),
+			]
 		];
 	}
 
 	protected function resolveSkuField( $root, $args ) {
 		return $root->stock_id;
+	}
+
+	protected function resolvePricesField( $root, $args ) {
+		return $root->prices;
 	}
 }

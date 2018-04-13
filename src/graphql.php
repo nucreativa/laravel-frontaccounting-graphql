@@ -176,6 +176,7 @@ return [
 		'PurchaseOrderDetailsType' => 'Nucreativa\LaravelFrontaccountingGraphQL\Type\PurchaseOrderDetailsType',
 		'ProductType'              => 'Nucreativa\LaravelFrontaccountingGraphQL\Type\ProductType',
 		'ProductCategoryType'      => 'Nucreativa\LaravelFrontaccountingGraphQL\Type\ProductCategoryType',
+		'ProductPriceType'         => 'Nucreativa\LaravelFrontaccountingGraphQL\Type\ProductPriceType',
 	],
 
 	/*
