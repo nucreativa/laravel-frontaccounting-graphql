@@ -129,7 +129,7 @@ return [
 				'product'       => 'Nucreativa\LaravelFrontaccountingGraphQL\Query\ProductQuery',
 			],
 			'mutation' => [
-
+				'createProduct' => 'Nucreativa\LaravelFrontaccountingGraphQL\Mutation\CreateProduct',
 			],
 		]
 	],
